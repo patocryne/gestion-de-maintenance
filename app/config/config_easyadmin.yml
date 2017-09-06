@@ -1,0 +1,7 @@
+#Configuration EasyAdmin
+
+easy_admin:
+    site_name: 'Orkeis Maintenance'
+    entities:
+        User:
+            class: AppBundle\Entity\User

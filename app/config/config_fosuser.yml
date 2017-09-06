@@ -1,0 +1,30 @@
+#Configuration FOSUserBundle
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    
+    
+
+
+    # configuration of the sender email address 
+    service:
+        mailer: fos_user.mailer.twig_swift
+
+    from_email:
+        address: '%mailer_user%'
+        sender_name: 'Orkeis Maintenance'
+    resetting:
+        email:
+            template: Email/password_resetting.email.twig
+            # token_ttl: 43200
+            # from_email:
+            #     address:    resetting@orkeis.fr
+            #     sender_name: Orkeis
+
+    # registration:
+    #     confirmation:
+    #         from_email:
+    #             address: registered@codereviewvideos.com
+    #             sender_name: Chris Says Hi
